@@ -5,5 +5,6 @@ very simple and basic express4 and angular.js seed.
 
 It is NOT a MEAN stack.
 it uses new express 4 router stuff to create nice and easy to maintain routing.
+Ultimately with ready gruntfile, bower, and tests
 
 should be ready in a few days
