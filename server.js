@@ -13,8 +13,13 @@ var app = express();
 var bodyParser		= require('body-parser');
 var methodOverride	= require('method-override');
 var logger			= require('morgan');
-var session			= require('express-session');
-var cookieParser	= require('cookie-parser');
+//var session			= require('express-session');
+//var cookieParser	= require('cookie-parser');
+
+
+// local files dependencies
+require('./api/api')(app, express);
+
 
 // port settings
 var port = process.env.PORT || 8080;
@@ -23,26 +28,26 @@ var port = process.env.PORT || 8080;
 app.use(bodyParser());
 app.use(methodOverride());
 
+
+//set jade as template engine
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/public/');
+
+//logs
+
+app.use(logger('dev'));
+
 //================================== routes for website================================
 
 var router = express.Router();
 
-router.get('/', function(req, res) {
-	res.send('home page!');
+router.get('*', function(req, res) {
+	res.render('index');
 });
 
 //apply router
 app.use('/', router);
 
-
-//================================== routes for API ====================================
-var api = express.Router();
-
-api.get('/somget', function(req, res) {
-	res.send('some json');
-});
-
-app.use('/api', api);
 
 // ================================= start server =========================================
 
