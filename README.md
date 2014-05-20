@@ -16,7 +16,7 @@ should be ready in a few days
 
 
 ## file structure
-
+```
   /app  
   --/views  
   ----index.jade  //angular main template  
@@ -26,7 +26,7 @@ should be ready in a few days
   ----api.js  
   ----web.js  
   server.js   //express server  
-
+```
 
 ## License
 
