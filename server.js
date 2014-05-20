@@ -17,8 +17,12 @@ var logger			= require('morgan');
 //var cookieParser	= require('cookie-parser');
 
 
-// local files dependencies
-require('./api/api')(app, express);
+
+//================== ROUTES ======================================
+//all api routes go in ./routes/api.js file
+require('./routes/api')(app, express);
+require('./routes/web')(app, express);
+//================================================================
 
 
 // port settings
@@ -31,22 +35,11 @@ app.use(methodOverride());
 
 //set jade as template engine
 app.set('view engine', 'jade');
-app.set('views', __dirname + '/public/');
+app.set('views', __dirname + '/public/views/');
+
 
 //logs
-
 app.use(logger('dev'));
-
-//================================== routes for website================================
-
-var router = express.Router();
-
-router.get('*', function(req, res) {
-	res.render('index');
-});
-
-//apply router
-app.use('/', router);
 
 
 // ================================= start server =========================================
