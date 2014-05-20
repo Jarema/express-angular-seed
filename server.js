@@ -16,15 +16,26 @@ var logger			= require('morgan');
 //var session			= require('express-session');
 //var cookieParser	= require('cookie-parser');
 
+// other dependencies
+
+var fs				= require('fs');
+
+//==================ENVIROMENT SETTINGS ==========================
+var env = process.env.NODE_ENV || 'development';
+
+if (env === 'development') {
+
+	app.locals.pretty = true;
+	app.use(logger('dev'));
+}
+
+//logs
+
+var logfile = fs.createWriteStream('./logfile.log', {flags: 'a'});
+app.use(logger({stream: logfile}));
 
 
-//================== ROUTES ======================================
-//all api routes go in ./routes/api.js file
-require('./routes/api')(app, express);
-require('./routes/web')(app, express);
-//================================================================
-
-
+//==================================================================
 // port settings
 var port = process.env.PORT || 8080;
 
@@ -35,12 +46,13 @@ app.use(methodOverride());
 
 //set jade as template engine
 app.set('view engine', 'jade');
-app.set('views', __dirname + '/public/views/');
+app.set('views', __dirname + '/app/views/');
 
 
-//logs
-app.use(logger('dev'));
+//================== ROUTES ======================================
 
+require('./routes/api')(app, express);	//all api routes go in ./routes/api.js file
+require('./routes/web')(app, express);	//all website routes go in ./routes/web.js file
 
 // ================================= start server =========================================
 

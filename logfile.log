@@ -1,0 +1,5 @@
+127.0.0.1 - - [Tue, 20 May 2014 08:25:59 GMT] "GET /partials/partial1 HTTP/1.1" 200 49 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.137 Safari/537.36"
+127.0.0.1 - - [Tue, 20 May 2014 08:25:59 GMT] "GET /partials/partial1 HTTP/1.1" 200 49 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.137 Safari/537.36"
+127.0.0.1 - - [Tue, 20 May 2014 08:26:00 GMT] "GET /partials/partial1 HTTP/1.1" 200 49 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.137 Safari/537.36"
+127.0.0.1 - - [Tue, 20 May 2014 08:26:00 GMT] "GET /partials/partial1 HTTP/1.1" 200 49 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.137 Safari/537.36"
+127.0.0.1 - - [Tue, 20 May 2014 08:26:00 GMT] "GET /partials/partial1 HTTP/1.1" 200 49 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.137 Safari/537.36"

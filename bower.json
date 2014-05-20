@@ -1,0 +1,18 @@
+{
+	"name": "express-angular-seed",
+	"version": "0.1.0",
+	"homepage": "https://github.com/Jarema/express-angular-seed",
+	"authors": [
+		"Tomasz Pietrek <melgaer@gmail.com>"
+	],
+	"moduleType": [
+		"node"
+	],
+	"dependencies": {
+		"angular": "latest",
+		"angular-bootstrap": "latest"
+		"bootstrap": "latest"
+	},
+	"directory": "app/components",
+	"license": "MIT"
+}
