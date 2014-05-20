@@ -18,14 +18,14 @@ should be ready in a few days
 ## file structure
 ```
   /app  
-  --/views  
-  ----index.jade  //angular main template  
-  ----/partials //angular partials  
-  --/components //all bower components  
-  --/routes     // api and web routes  
-  ----api.js  
-  ----web.js  
-  server.js   //express server  
+  ---/views  
+  ------index.jade    //angular main template  
+  ------/partials    //angular partials  
+  ---/components    //all bower components  
+  ---/routes       // api and web routes  
+  ------api.js  
+  ------web.js  
+  server.js       //express server  
 ```
 
 ## License
