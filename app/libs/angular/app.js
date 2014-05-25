@@ -7,7 +7,8 @@ var certe = angular.module('certe', [
 	'certeControllers',
 	'certeServices',
 	'ngRoute',
-	'ngResource'
+	'ngResource',
+	'ui.bootstrap'
 ]);
 
 

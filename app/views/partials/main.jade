@@ -1,28 +1,39 @@
-| filtruj:
-select(ng-model='filter')
-	option(value='imie') po imieniu
-	option(value='wiek') po starości
-	option(value='nazwisko') po nazwisku
-input(ng-model='query')
+
+.row
+	.form-group
+		.col-sm-1.control-label filtruj:
+		.col-sm-2
+			select.form-control(ng-model='filter')
+				option(value='imie') po imieniu
+				option(value='wiek') po starości
+				option(value='nazwisko') po nazwisku
+		.col.sm-2
+			input(ng-model='query')
 
 
-| uporządkuj:
-select(ng-model='orderProp')
-	option(value='wiek') wiek
-	option(value='imie') imie
-	option(value='nazwisko') nazwisko
+.row
+	.form-group
+		.col-sm-1 uporządkuj:
+		.col-sm-2
+			select.form-control(ng-model='orderProp')
+				option(value='wiek') wiek
+				option(value='imie') imie
+				option(value='nazwisko') nazwisko
 
 
 br
 br
+div(ng-controller='paginator')
+	h2 aktualna strona: {{currentPage}}
+	table.table.table-striped
+		thead
+			th imie
+			th nazwisko
+			th wiek
+		tbody
+			tr(ng-repeat='osoba in paged[currentPage - 1] | filter: getFilter() | orderBy: orderProp')
+				td {{osoba.imie}}
+				td {{osoba.nazwisko}}
+				td {{osoba.wiek}}
 
-table.table.table-striped
-	thead
-		th imie
-		th nazwisko
-		th wiek
-	tbody
-		tr(ng-repeat='osoba in imiona | filter: getFilter() | orderBy: orderProp')
-			td {{osoba.imie}}
-			td {{osoba.nazwisko}}
-			td {{osoba.wiek}}
+	pagination(direction-links="true" boundary-links="true" total-items="totalItems" ng-model="currentPage")
