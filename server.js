@@ -47,6 +47,8 @@ app.use(methodOverride());
 //set jade as template engine
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/app/views/');
+app.use('/components', express.static(__dirname + '/app/components'));
+app.use('/libs', express.static(__dirname + '/app/libs'));
 
 
 //================== ROUTES ======================================

@@ -1,4 +1,15 @@
 doctype html
-html
+html(ng-app='certe')
 	head
-	body sukces!
+		meta(charset='utf-8')
+		base(href='/')
+		script(src='/components/angular/angular.min.js')
+		script(src='/components/angular-route/angular-route.min.js')
+		script(src='/components/angular-bootstrap/ui-bootstrap-tpls.min.js')
+		script(src='/components/angular-resource/angular-resource.min.js')
+		script(src='/libs/angular/app.js')
+		script(src='/libs/angular/controllers.js')
+		script(src='/libs/angular/services.js')
+		link(rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.min.css')
+	body
+		div(ng-view)

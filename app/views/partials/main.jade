@@ -1,0 +1,12 @@
+| uporządkuj:
+select(ng-model='queryfier')
+	option(value='query.imie') po imieniu
+	option(value='query.wiek') po wieku
+
+
+input(ng-model='query')
+input(ng-model='query.wiek')
+input(ng-model='query.imie')
+
+ul
+	li(ng-repeat='osoba in imiona | filter: query: strict | orderBy: orderProp') imie: {{osoba.imie}}, wiek: {{osoba.wiek}}
