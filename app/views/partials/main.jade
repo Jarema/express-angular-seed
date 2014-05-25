@@ -1,12 +1,28 @@
-| uporządkuj:
-select(ng-model='queryfier')
-	option(value='query.imie') po imieniu
-	option(value='query.wiek') po wieku
-
-
+| filtruj:
+select(ng-model='filter')
+	option(value='imie') po imieniu
+	option(value='wiek') po starości
+	option(value='nazwisko') po nazwisku
 input(ng-model='query')
-input(ng-model='query.wiek')
-input(ng-model='query.imie')
 
-ul
-	li(ng-repeat='osoba in imiona | filter: query: strict | orderBy: orderProp') imie: {{osoba.imie}}, wiek: {{osoba.wiek}}
+
+| uporządkuj:
+select(ng-model='orderProp')
+	option(value='wiek') wiek
+	option(value='imie') imie
+	option(value='nazwisko') nazwisko
+
+
+br
+br
+
+table.table.table-striped
+	thead
+		th imie
+		th nazwisko
+		th wiek
+	tbody
+		tr(ng-repeat='osoba in imiona | filter: getFilter() | orderBy: orderProp')
+			td {{osoba.imie}}
+			td {{osoba.nazwisko}}
+			td {{osoba.wiek}}

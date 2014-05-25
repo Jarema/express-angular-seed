@@ -7,9 +7,11 @@ module.exports = function(app, express) {
 
 	api.get('/names', function(req, res) {
 		res.json({imiona: [
-			{"imie": "tomek", "wiek": "29"},
-			{"imie": "arturek", "wiek": "2"},
-			{"imie": "artur", "wiek": "30"}
+			{"imie": "tomek", "nazwisko": "pietrek", "wiek": 29},
+			{"imie": "arturek", "nazwisko": "pietrek", "wiek": 2},
+			{"imie": "artur", nazwisko: "gawronski", "wiek": 30},
+			{"imie": "karina", nazwisko: "wawrzyniak", "wiek": 15},
+			{"imie": "samson", "nazwisko": "snow", "wiek": 6}
 		]
 
 		});

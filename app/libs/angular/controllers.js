@@ -11,5 +11,11 @@ certeControllers.controller('mainController', ['$scope', 'dane',
 			$scope.imiona = lista.imiona;
 		});
 		$scope.orderProp = 'wiek';
-		$scope.queryType = 'wiek';
+
+		$scope.filter = 'imie';
+		$scope.getFilter = function() {
+			var filter= {};
+			filter[$scope.filter] = $scope.query;
+			return filter;
+		};
 	}]);

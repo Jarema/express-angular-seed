@@ -2,6 +2,7 @@ doctype html
 html(ng-app='certe')
 	head
 		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1')
 		base(href='/')
 		script(src='/components/angular/angular.min.js')
 		script(src='/components/angular-route/angular-route.min.js')
@@ -11,5 +12,12 @@ html(ng-app='certe')
 		script(src='/libs/angular/controllers.js')
 		script(src='/libs/angular/services.js')
 		link(rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/libs/css/style.css')
 	body
-		div(ng-view)
+		.container
+
+			.panel.panel-default
+				.panel-heading
+					h3.panel-title angular trainer
+				.panel-body
+					div(ng-view)
