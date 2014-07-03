@@ -1,7 +1,9 @@
 /*jshint node: true*/
+
+var express = require('express');
 //================================== routes for index and partials================================
 
-module.exports = function(app, express) {
+module.exports = function(app) {
 	'use strict';
 	var router = express.Router();
 

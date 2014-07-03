@@ -1,11 +1,13 @@
 /*jshint node: true */
-
+var express = require('express');
 //================================== routes for API ====================================
-module.exports = function(app, express) {
+module.exports = function(app) {
 	'use strict';
+
 	var api = express.Router();
 
 	api.get('/names', function(req, res) {
+		req.session.auth = true;
 		res.json({imiona: [
 			{"imie": "tomek", "nazwisko": "pietrek", "wiek": 29},
 			{"imie": "arturek", "nazwisko": "pietrek", "wiek": 2},
