@@ -32,7 +32,7 @@ module.exports = function(app) {
 			{"imie": "samson17", "nazwisko": "snow", "wiek": 6},
 			{"imie": "samson19", "nazwisko": "snow", "wiek": 6},
 			{"imie": "samson20", "nazwisko": "snow", "wiek": 6},
-			{"imie": "samson21", "nazwisko": "snow", "wiek": 6}
+			{"imie": "samson21", "nazwisko": "snow", "wiek": 7}
 
 		]
 

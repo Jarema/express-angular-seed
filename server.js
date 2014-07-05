@@ -32,7 +32,6 @@ app.use(session({
 // or You set env, or it will be development
 var env = process.env.NODE_ENV || 'development';
 
-
 // if env == development - dont minify jade -> html
 if (env === 'development') {
 
@@ -50,7 +49,12 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+
+// restful support
 app.use(methodOverride());
+
+// logs
+app.use(logger('dev'));
 
 
 //set jade as template engine

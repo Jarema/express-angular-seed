@@ -6,19 +6,47 @@ module.exports = function(grunt) {
 	//project config
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		uglify: {
-			my_target: {
+		nodemon: {
+		  dev: {
+			script: 'server.js'
+		  }
+		},
+		less: {
+			dev: {
+				files:[{
+					expand: true,
+					ext: '.css',
+					cwd: 'src/less',
+					src: ['**/*.less'],
+					dest: 'app/libs/css'
+				}]
+			}
+		},
+		watch: {
+			less: {
+				files: 'src/less/**/*.less',
+				tasks: ['lessc'],
+			}
+		},
+		concurrent: {
+			target: {
+				tasks: ['watch', 'nodemon'],
 				options: {
-					footer: '//koniec'
-				},
-				files: {
-					'server.min.js': ['server.js']
+					logConcurrentOutput: true
 				}
 			}
 		}
+
 	});
-
+	// plugins
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-nodemon');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-concurrent');
 
-	grunt.registerTask('ugly', ['uglify']);
+	// tasks
+	grunt.registerTask('lessc', ['less:dev']);
+	grunt.registerTask('default',['concurrent']);
+	grunt.registerTask('watcher', ['watch']);
 };
