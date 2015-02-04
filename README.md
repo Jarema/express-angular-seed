@@ -12,7 +12,7 @@ bower to install angular, bootstrap, and rest
 
 Ultimately with ready gruntfile, bower, and tests
 
-should be ready in a few days
+development suspended
 
 
 ## file structure
